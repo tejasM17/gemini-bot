@@ -2,7 +2,7 @@
 ---
 ## 1️⃣ Fork & Clone the Repository
 ```
-git clone https://github.com/tejasM17/gemini-bot.git
+git clone https://github.com/username/gemini-bot.git
 cd gemini-bot
 ```
 ---
