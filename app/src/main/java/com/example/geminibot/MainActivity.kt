@@ -18,10 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             GeminiBotTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Text(
-                        modifier = Modifier.padding(innerPadding),
-                        text = "GEMINI BOT"
-                    )
+                    ChatPage(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
