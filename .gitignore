@@ -1,12 +1,14 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+# IntelliJ / Android Studio per-user state. The previous list of
+# specific .idea/* entries (caches, libraries, workspace.xml, …) only
+# covered some of the files the IDE writes; per-developer files like
+# compiler.xml, gradle.xml, markdown.xml, misc.xml, runConfigurations.xml
+# and vcs.xml ended up tracked anyway and got committed by the IDE on
+# every developer's checkout (issue #7). Excluding the whole `.idea/`
+# tree is the standard JetBrains recommendation.
+.idea/
 .DS_Store
 /build
 /captures
