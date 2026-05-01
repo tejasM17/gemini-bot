@@ -15,3 +15,5 @@ Open Android Studio
 Select Open Existing Project
 
 Choose the gemini-bot folder
+
+test for update branch
