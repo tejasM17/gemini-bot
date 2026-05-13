@@ -1,6 +1,6 @@
 # 🛠 Setup & Installation
 ---
-## 1️⃣ Fork & Clone the Repository
+##  Fork & Clone the Repository
 
 ![img.png](img.png)
 
@@ -8,10 +8,7 @@
 git clone https://github.com/username/gemini-bot.git
 ```
 ---
-## 2️⃣ Open in Android Studio
 
-Open Android Studio
+##  refer setup instruction
 
-Select Open Existing Project
-
-Choose the gemini-bot folder
+[🎥video](https://photos.app.goo.gl/RE3hXx3Kkcgh29G48)
