@@ -1,12 +1,13 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+# Ignore the entire IDE settings directory rather than cherry-picking
+# individual files. Android Studio writes per-developer state into
+# .idea/ regularly, and the previous selective-ignore pattern was
+# incomplete (e.g. AndroidProjectSystem.xml, compiler.xml, gradle.xml,
+# markdown.xml, misc.xml, runConfigurations.xml, vcs.xml all ended up
+# tracked). See https://github.com/tejasM17/gemini-bot/issues/7.
+.idea/
 .DS_Store
 /build
 /captures
