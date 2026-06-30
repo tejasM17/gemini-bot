@@ -7,6 +7,10 @@ import androidx.compose.ui.Modifier
 
 @Composable
 fun ChatScreen(modifier: Modifier = Modifier) {
+    val viewmodel: ChatViewmodel = ChatViewmodel()
+
+    viewmodel.sendMessage("hi, am tejas")
+
     Text(
         text = "Chat page",
         modifier = modifier,
