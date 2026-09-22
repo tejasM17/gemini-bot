@@ -1,4 +1,4 @@
-package com.example.geminibot
+package com.example.geminibot.ui
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text

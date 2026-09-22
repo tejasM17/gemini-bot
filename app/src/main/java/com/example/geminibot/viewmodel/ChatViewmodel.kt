@@ -1,4 +1,4 @@
-package com.example.geminibot
+package com.example.geminibot.viewmodel
 
 import androidx.lifecycle.ViewModel
 
