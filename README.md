@@ -1,5 +1,5 @@
-# 🛠 Setup & Installation
----
+#  Setup & Installation
+
 ##  1. Fork & Clone the Repository
 
 ![img.png](img.png)
