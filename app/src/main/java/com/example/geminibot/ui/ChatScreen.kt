@@ -19,9 +19,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.geminibot.viewmodel.ChatViewmodel
 
 @Composable
 fun ChatScreen(modifier: Modifier = Modifier) {
+    val viewmodel: ChatViewmodel = ChatViewmodel()
+
     Column(
         modifier = modifier,
     ) {
@@ -29,13 +32,14 @@ fun ChatScreen(modifier: Modifier = Modifier) {
             text = "CHAT PAGE",
             style = MaterialTheme.typography.headlineLarge
         )
-        MessageInput()
+        MessageInput(onSend = {msg ->
+            viewmodel.sendMessage(msg)
+        })
     }
 }
 
-
 @Composable
-fun MessageInput() {
+fun MessageInput(onSend: (String) -> Unit) {
     var message by remember { mutableStateOf("") }
 
     Row(
@@ -51,6 +55,7 @@ fun MessageInput() {
                 IconButton(
                     onClick = {
                         Log.d("MessageSent",message)
+                        onSend(message.trim())
                         message=""
                     }
                 ) {
