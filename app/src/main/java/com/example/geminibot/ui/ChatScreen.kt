@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 @Composable
 fun ChatScreen(modifier: Modifier = Modifier) {
     Text(
-        text = "Chat page",
+        text = "CHAT PAGE",
         modifier = modifier,
         style = MaterialTheme.typography.headlineLarge
     )
