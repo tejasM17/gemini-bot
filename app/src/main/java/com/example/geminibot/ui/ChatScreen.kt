@@ -1,6 +1,7 @@
 package com.example.geminibot.ui
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -22,6 +23,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.geminibot.data.Message
@@ -36,12 +38,16 @@ fun ChatScreen(modifier: Modifier = Modifier) {
         modifier = modifier,
     ) {
         Text(
-            text = "CHAT PAGE",
-            style = MaterialTheme.typography.headlineLarge
+            modifier = Modifier.fillMaxWidth()
+                .background(color = MaterialTheme.colorScheme.onPrimary),
+            text = "GEMINI",
+            textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.headlineLarge,
         )
 
         LazyColumn(
-            modifier = Modifier.weight(1f)
+            modifier = Modifier
+                .weight(1f)
                 .padding(bottom = 5.dp)
         ) {
             items(message){txt ->
@@ -58,7 +64,8 @@ fun ChatScreen(modifier: Modifier = Modifier) {
 @Composable
 fun MessageBubble(msg: Message) {
     Row(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .padding(horizontal = 15.dp, vertical = 4.dp),
         horizontalArrangement = if (msg.isUser) Arrangement.End else Arrangement.Start
     ) {
@@ -76,7 +83,8 @@ fun MessageInput(onSend: (String) -> Unit) {
     var message by remember { mutableStateOf("") }
 
     Row(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
             .padding(bottom = 30.dp)
     ) {
         OutlinedTextField(
