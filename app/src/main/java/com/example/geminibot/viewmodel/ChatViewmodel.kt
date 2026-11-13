@@ -20,18 +20,33 @@ class ChatViewmodel: ViewModel() {
         if (question.isBlank()) return
 
         message.add(Message(text = question, isUser = true))
+        val chatHistory = buildChatHistory(message)
 
         viewModelScope.launch {
-            Log.d("GeminiResponse", "Qstn : $question")
+            Log.d("GeminiResponse", "Qtn : $question")
             try {
-                val response = model.generateContent(question)
+                val response = model.generateContent(question + chatHistory)
                 val answer = response.text ?: "No response.."
                 message.add(Message(text = answer, isUser = false))
 
-                Log.d("GeminiResponse", "Ans $answer")
+                Log.d("GeminiResponse", "Ans: $answer")
             } catch (e: Exception) {
                 Log.e("GeminiResponse", "Error: ${e.message}")
             }
         }
     }
+}
+
+fun buildChatHistory(messages: List<Message>): String {
+    val history = StringBuilder()
+
+    for (msg in messages) {
+        if (msg.isUser) {
+            history.append("User: ${msg.text}\n")
+        } else {
+            history.append("GEMINI-bot: ${msg.text}\n")
+        }
+    }
+
+    return history.toString()
 }
