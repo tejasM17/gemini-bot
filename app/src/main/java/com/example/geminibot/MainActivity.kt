@@ -7,7 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
+import com.example.geminibot.ui.ChatScreen
 import com.example.geminibot.ui.theme.GeminiBotTheme
 import com.example.geminibot.ui.theme.Typography
 
@@ -18,10 +20,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             GeminiBotTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Text(
-                        modifier = Modifier.padding(innerPadding),
-                        text = "GEMINI BOT",
-                        fontSize = Typography.headlineLarge.fontSize
+                    ChatScreen(
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
