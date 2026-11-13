@@ -2,6 +2,7 @@ package com.example.geminibot.viewmodel
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.geminibot.data.Message
@@ -30,23 +31,24 @@ class ChatViewmodel: ViewModel() {
                 message.add(Message(text = answer, isUser = false))
 
                 Log.d("GeminiResponse", "Ans: $answer")
-            } catch (e: Exception) {
-                Log.e("GeminiResponse", "Error: ${e.message}")
+            } catch (e: Exception){
+                Log.d("GeminiResponse", "Error : ${e.message}")
             }
         }
     }
-}
 
-fun buildChatHistory(messages: List<Message>): String {
-    val history = StringBuilder()
+    private fun buildChatHistory(message: List<Message>): String {
+        val history = StringBuilder()
 
-    for (msg in messages) {
-        if (msg.isUser) {
-            history.append("User: ${msg.text}\n")
-        } else {
-            history.append("GEMINI-bot: ${msg.text}\n")
+        for (msg in message){
+            if (msg.isUser){
+                history.append("User : ${msg.text}")
+            }
+            else {
+                history.append("Gemini-bot : ${msg.text}")
+            }
         }
-    }
 
-    return history.toString()
+        return history.toString()
+    }
 }
